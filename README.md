@@ -19,7 +19,7 @@ confirmed_cases_worldwide <- read_csv("datasets/confirmed_cases_worldwide.csv")
 confirmed_cases_worldwide
 ```
 
-!(/Images/fig01.png)
+![Image Alt text](/Images/fig01.png)
 
 ## 2. Confirmed cases throughout the world
 <p>The table above shows the cumulative confirmed cases of COVID-19 worldwide by date. Just reading numbers in a table makes it hard to get a sense of the scale and growth of the outbreak. Let's draw a line plot to visualize the confirmed cases worldwide.</p>
