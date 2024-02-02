@@ -6,6 +6,7 @@
 <p>In this notebook, you will visualize COVID-19 data from the first several weeks of the outbreak to see at what point this virus became a global pandemic.</p>
 <p><em>Please note that information and data regarding COVID-19 is frequently being updated. The data used in this project was pulled on March 17, 2020, and should not be considered to be the most up to date data available.</em></p>
 
+```
 # Load the readr, ggplot2, and dplyr packages
 library(readr)
 library(ggplot2)
@@ -16,3 +17,4 @@ confirmed_cases_worldwide <- read_csv("datasets/confirmed_cases_worldwide.csv")
 
 # See the result
 confirmed_cases_worldwide
+```
