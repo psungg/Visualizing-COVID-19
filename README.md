@@ -33,7 +33,7 @@ ggplot(confirmed_cases_worldwide, aes(x = date, y = cum_cases )) +
   ylab("Cumulative confirmed cases")
 ```
 
-![Fig02](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/7d9e60d4-758d-4477-ad6e-aab073a2e640)
+![Fig02](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig02.png)
 
 
 ## 3. China compared to the rest of the world
@@ -58,7 +58,7 @@ plt_cum_confirmed_cases_china_vs_world <- ggplot(confirmed_cases_china_vs_world)
 plt_cum_confirmed_cases_china_vs_world
 ```
 
-![Fig03](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/72b9f608-09e2-44f6-902f-ed099c3fbeb9)
+![Fig03](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig03.png)
 
 
 ## 4. Let's annotate!
@@ -82,7 +82,7 @@ plt_cum_confirmed_cases_china_vs_world +
   geom_text(aes(x = date, label = event), data = who_events, y = 1e5)
 ```
 
-![Fig04](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/909c506d-e5f2-4370-ae92-869427daae3e)
+![Fig04](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig04.png)
 
 
 ## 5. Adding a trend line to China
@@ -102,7 +102,7 @@ ggplot(china_after_feb15, aes(date, cum_cases)) +
   ylab("Cumulative confirmed cases")
 ```
 
-![Fig05](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/2b86efd5-969a-4240-8127-a37667adffb7)
+![Fig05](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig05.png)
 
 
 ## 6. And the rest of the world?
@@ -125,7 +125,7 @@ plt_not_china_trend_lin <- ggplot(not_china, aes(date, cum_cases)) +
 plt_not_china_trend_lin
 ```
 
-![Fig06](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/5e4a1b75-0f43-4ae2-beec-77934292be73)
+![Fig06](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig06.png)
 
 
 ## 7. Adding a logarithmic scale
@@ -137,7 +137,7 @@ plt_not_china_trend_lin +
   scale_y_log10()
 ```
 
-![Fig07](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/5f406ecf-f7ec-4f56-b491-c8f7323eaf33)
+![Fig07](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig07.png)
 
 
 ## 8. Which countries outside of China have been hit hardest?
@@ -159,7 +159,7 @@ top_countries_by_total_cases <- confirmed_cases_by_country %>%
 top_countries_by_total_cases
 ```
 
-![Fig08](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/7ae02c23-a8be-40d0-904f-f2f24adba2e7)
+![Fig08](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig08.png)
 
 
 ## 9. Plotting hardest hit countries as of Mid-March 2020
@@ -178,4 +178,4 @@ glimpse(confirmed_cases_top7_outside_china)
 ggplot(confirmed_cases_top7_outside_china, aes(date, cum_cases, color = country)) + geom_line() + ylab("Cumulative confirmed cases")
 ```
 
-![Fig09](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/bf73c2f9-ac4a-44e4-90a4-99d9f6fdcdf9)
+![Fig09](https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig09.png)
