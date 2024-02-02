@@ -5,3 +5,14 @@
 <p>Fortunately, organizations around the world have been collecting data so that governments can monitor and learn from this pandemic. Notably, the Johns Hopkins University Center for Systems Science and Engineering created a <a href="https://github.com/RamiKrispin/coronavirus">publicly available data repository</a> to consolidate this data from sources like the WHO, the Centers for Disease Control and Prevention (CDC), and the Ministry of Health from multiple countries.</p>
 <p>In this notebook, you will visualize COVID-19 data from the first several weeks of the outbreak to see at what point this virus became a global pandemic.</p>
 <p><em>Please note that information and data regarding COVID-19 is frequently being updated. The data used in this project was pulled on March 17, 2020, and should not be considered to be the most up to date data available.</em></p>
+
+# Load the readr, ggplot2, and dplyr packages
+library(readr)
+library(ggplot2)
+library(dplyr)
+
+# Read datasets/confirmed_cases_worldwide.csv into confirmed_cases_worldwide
+confirmed_cases_worldwide <- read_csv("datasets/confirmed_cases_worldwide.csv")
+
+# See the result
+confirmed_cases_worldwide
