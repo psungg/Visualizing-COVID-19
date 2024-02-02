@@ -19,7 +19,8 @@ confirmed_cases_worldwide <- read_csv("datasets/confirmed_cases_worldwide.csv")
 confirmed_cases_worldwide
 ```
 
-![Image Alt text](fig01.png)
+![Fig01](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/6a2b13ec-6254-4bc9-baee-9a3b61b90103)
+
 
 ## 2. Confirmed cases throughout the world
 <p>The table above shows the cumulative confirmed cases of COVID-19 worldwide by date. Just reading numbers in a table makes it hard to get a sense of the scale and growth of the outbreak. Let's draw a line plot to visualize the confirmed cases worldwide.</p>
@@ -31,6 +32,9 @@ ggplot(confirmed_cases_worldwide, aes(x = date, y = cum_cases )) +
   geom_line() +
   ylab("Cumulative confirmed cases")
 ```
+
+![Fig02](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/7d9e60d4-758d-4477-ad6e-aab073a2e640)
+
 
 ## 3. China compared to the rest of the world
 <p>The y-axis in that plot is pretty scary, with the total number of confirmed cases around the world approaching 200,000. Beyond that, some weird things are happening: there is an odd jump in mid February, then the rate of new cases slows down for a while, then speeds up again in March. We need to dig deeper to see what is happening.</p>
@@ -54,6 +58,9 @@ plt_cum_confirmed_cases_china_vs_world <- ggplot(confirmed_cases_china_vs_world)
 plt_cum_confirmed_cases_china_vs_world
 ```
 
+![Fig03](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/72b9f608-09e2-44f6-902f-ed099c3fbeb9)
+
+
 ## 4. Let's annotate!
 <p>Wow! The two lines have very different shapes. In February, the majority of cases were in China. That changed in March when it really became a global outbreak: around March 14, the total number of cases outside China overtook the cases inside China. This was days after the WHO declared a pandemic.</p>
 <p>There were a couple of other landmark events that happened during the outbreak. For example, the huge jump in the China line on February 13, 2020 wasn't just a bad day regarding the outbreak; China changed the way it reported figures on that day (CT scans were accepted as evidence for COVID-19, rather than only lab tests).</p>
@@ -75,6 +82,9 @@ plt_cum_confirmed_cases_china_vs_world +
   geom_text(aes(x = date, label = event), data = who_events, y = 1e5)
 ```
 
+![Fig04](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/909c506d-e5f2-4370-ae92-869427daae3e)
+
+
 ## 5. Adding a trend line to China
 <p>When trying to assess how big future problems are going to be, we need a measure of how fast the number of cases is growing. A good starting point is to see if the cases are growing faster or slower than linearly.</p>
 <p>There is a clear surge of cases around February 13, 2020, with the reporting change in China. However, a couple of days after, the growth of cases in China slows down. How can we describe COVID-19's growth in China after February 15, 2020?</p>
@@ -91,6 +101,9 @@ ggplot(china_after_feb15, aes(date, cum_cases)) +
   geom_smooth(method = 'lm', se = FALSE) +
   ylab("Cumulative confirmed cases")
 ```
+
+![Fig05](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/2b86efd5-969a-4240-8127-a37667adffb7)
+
 
 ## 6. And the rest of the world?
 <p>From the plot above, the growth rate in China is slower than linear. That's great news because it indicates China has at least somewhat contained the virus in late February and early March.</p>
@@ -112,6 +125,9 @@ plt_not_china_trend_lin <- ggplot(not_china, aes(date, cum_cases)) +
 plt_not_china_trend_lin
 ```
 
+![Fig06](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/5e4a1b75-0f43-4ae2-beec-77934292be73)
+
+
 ## 7. Adding a logarithmic scale
 <p>From the plot above, we can see a straight line does not fit well at all, and the rest of the world is growing much faster than linearly. What if we added a logarithmic scale to the y-axis?</p>
 
@@ -120,6 +136,9 @@ plt_not_china_trend_lin
 plt_not_china_trend_lin + 
   scale_y_log10()
 ```
+
+![Fig07](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/5f406ecf-f7ec-4f56-b491-c8f7323eaf33)
+
 
 ## 8. Which countries outside of China have been hit hardest?
 <p>With the logarithmic scale, we get a much closer fit to the data. From a data science point of view, a good fit is great news. Unfortunately, from a public health point of view, that means that cases of COVID-19 in the rest of the world are growing at an exponential rate, which is terrible news.</p>
@@ -140,6 +159,9 @@ top_countries_by_total_cases <- confirmed_cases_by_country %>%
 top_countries_by_total_cases
 ```
 
+![Fig08](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/7ae02c23-a8be-40d0-904f-f2f24adba2e7)
+
+
 ## 9. Plotting hardest hit countries as of Mid-March 2020
 <p>Even though the outbreak was first identified in China, there is only one country from East Asia (South Korea) in the above table. Four of the listed countries (France, Germany, Italy, and Spain) are in Europe and share borders. To get more context, we can plot these countries' confirmed cases over time.</p>
 <p>Finally, congratulations on getting to the last step! If you would like to continue making visualizations or find the hardest hit countries as of today, you can do your own analyses with the latest data available <a href="https://github.com/RamiKrispin/coronavirus">here</a>. </p>
@@ -155,3 +177,5 @@ glimpse(confirmed_cases_top7_outside_china)
 # cum_cases vs. date, colored by country
 ggplot(confirmed_cases_top7_outside_china, aes(date, cum_cases, color = country)) + geom_line() + ylab("Cumulative confirmed cases")
 ```
+
+![Fig09](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/bf73c2f9-ac4a-44e4-90a4-99d9f6fdcdf9)
