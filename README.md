@@ -19,7 +19,7 @@ confirmed_cases_worldwide <- read_csv("datasets/confirmed_cases_worldwide.csv")
 confirmed_cases_worldwide
 ```
 
-![Fig01](https://github.com/psungg/Visualizing-COVID-19/assets/158567231/6a2b13ec-6254-4bc9-baee-9a3b61b90103)
+![Fig01]([https://github.com/psungg/Visualizing-COVID-19/blob/main/Images/Fig01.png])
 
 
 ## 2. Confirmed cases throughout the world
